@@ -1,0 +1,30 @@
+import User from "./User"
+
+const Users =( { users } )=> {
+
+    console.log(users)
+
+    const userComponents = users.map(user => {
+        return <User
+                    key={user.user_id}
+                    lastName={user.lName}
+                    firstName={user.fName}
+                    username={user.username}
+                    email={user.email}
+                    dateCreated={user.date_created}
+        />
+    })
+
+    return(
+        <main className="main" id="usersMain">
+            <div className="container">
+                <h2 className="heading display-3">Users:</h2>
+                <div className="row">
+                    { userComponents }
+                </div>
+            </div>
+        </main>
+    )
+}
+
+export default Users
